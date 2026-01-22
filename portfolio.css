@@ -1,0 +1,330 @@
+/*********************************
+    GLOBAL
+*********************************/
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Avant Garde, Helvetica;
+    letter-spacing: .15vw;
+    font-size: 1.4vw;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+/*********************************
+    TEXT
+*********************************/
+
+h1 {
+    text-transform: uppercase;
+    font-family: "Trebuchet MS", Optima;
+    text-align: center;
+    margin: 0 0 3vh 0;
+    letter-spacing: .3vw;
+    color: #1a1a1a;
+}
+
+p {
+    font-family: Perpetua, "Rockwell Extra Bold";
+    line-height: 1.7;
+    margin-bottom: 2.5vh;
+}
+
+.center {
+    text-align: center;
+}
+
+a {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.white-text {
+    color: white;
+}
+
+/*********************************
+    NAVBAR
+*********************************/
+
+.Navbar {
+    background: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.Navbar a {
+    float: left;
+    padding: .75vw 1vw;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4vw;
+}
+
+.Navbar a:hover {
+    background: #f4f4f4;
+    color: black;
+    font-weight: bold;
+}
+
+.Navbar a.active {
+    background: darkgray;
+}
+
+/*********************************
+    VIDEO
+*********************************/
+
+#Typing_Video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+}
+
+@media (max-width: 576px) {
+    #Typing_Video {
+        display: none;
+    }
+}
+
+.Video_Text {
+    background: rgba(0,0,0,.5);
+    height: 100vh;
+    color: white;
+    padding-top: 15vh;
+}
+
+/*********************************
+    SLIDESHOW (FIXED)
+*********************************/
+
+#Slideshow {
+    margin-top: 120px;
+}
+
+#Slideshow_Background {
+    background: rgba(255, 255, 255, 0.35);
+    padding: 60px 0;
+}
+
+#Slideshow_Container {
+    position: relative;
+    margin: auto;
+    width: 60%;
+    max-width: 900px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.Slideshow_Images {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Caption text */
+.text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    color: white;                 /* ✅ WHITE TEXT */
+    background: rgba(0,0,0,0.7);
+    font-size: 1.4vw;
+    font-weight: bold;
+    letter-spacing: .2vw;
+}
+
+/* Navigation arrows */
+.Previous,
+.Next {
+    position: absolute;
+    top: 50%;                     /* ✅ centered */
+    transform: translateY(-50%);  /* ✅ true center */
+    padding: 16px;
+    font-size: 2.2vw;
+    color: white;                 /* ✅ white arrows */
+    background: rgba(0,0,0,0.6);
+    cursor: pointer;
+    user-select: none;
+    border-radius: 4px;
+}
+
+.Next {
+    right: 0;
+}
+
+.Previous:hover,
+.Next:hover {
+    background: rgba(0,0,0,0.9);
+}
+
+/* Dots */
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active,
+.dot:hover {
+    background-color: black;
+}
+
+/*********************************
+    ROWS / CARDS (ABOUT + GITHUB)
+*********************************/
+
+.Row {
+    margin: 5% 4%;
+    display: flex;
+    gap: 3%;
+}
+
+/* TEXT CARD */
+.Column_1 {
+    width: 50%;
+    background: #f2f2f2;
+    border-radius: 15px;
+    padding: 5% 7%;
+}
+
+/* IMAGE CARD */
+.Column_2 {
+    width: 50%;
+    background: #4d4d4d;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Images fill card */
+.Column_2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(70%);
+}
+
+.Column_2 img:hover {
+    filter: grayscale(5%);
+}
+
+/*********************************
+    GITHUB SECTION ALIGNMENT
+*********************************/
+
+#GitHub .Column_1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#GitHub .Column_2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*********************************
+    CONTACT POPUP
+*********************************/
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 1vw;
+    right: 1vw;
+    z-index: 9;
+}
+
+.form-container {
+    background: white;
+    padding: 1.5vw;
+    width: 45vw;
+}
+
+.form-container input[type=text],
+.form-container input[type=email] {
+    width: 100%;
+    padding: .9vw;
+    margin: .6vw 0;
+    background: Gainsboro;
+    border: none;
+}
+
+button {
+    width: 100%;
+    padding: 1.3vw;
+    font-weight: bold;
+    font-size: 1.4vw;
+    cursor: pointer;
+}
+
+button:hover {
+    background: black;
+    color: white;
+}
+
+/*********************************
+    FOOTER
+*********************************/
+
+footer {
+    padding: 2%;
+    background: white;
+}
+
+/*********************************
+    MOBILE
+*********************************/
+
+@media (max-width: 768px) {
+    .Row {
+        flex-direction: column;
+    }
+
+    .Column_1,
+    .Column_2 {
+        width: 100%;
+    }
+
+    body {
+        font-size: 4vw;
+    }
+
+    #Slideshow_Container {
+        width: 90%;
+        height: 300px;
+    }
+
+    .text {
+        font-size: 3vw;
+    }
+}
